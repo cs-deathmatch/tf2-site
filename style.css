@@ -1,0 +1,154 @@
+body {
+	background-color: rgb(184, 134, 245);
+	cursor: url('cursors/wii-pointer-ccw.cur'), auto;
+	margin: 0px;
+}
+h1{
+	margin-top: 5px;
+	font-family: Comic Sans ms;
+	text-align: center;
+}
+h2{
+	font-family: 'pixter-granularregular';
+    src: url('font/pixter_granular-webfont.woff2') format('woff2'),
+         url('font/pixter_granular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+hr {
+	border-color: #7300ff;
+	max-width: 1100px;
+	width: 90%;
+	margin: 15 100;
+	text-align: left;
+}
+nav{
+	text-align: center;
+}
+
+img.wiipng{
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+}
+
+@font-face {
+    font-family: 'pixter-granularregular';
+    src: url('font/pixter_granular-webfont.woff2') format('woff2'),
+         url('font/pixter_granular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'minecraft';
+    src: url('font/minecraft.woff') format('woff'),
+         url('font/minecraft.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+	font-family: 'pixter-granularregular';
+	font-size: large;
+}
+
+nav {
+	font-family: 'pixter-granularregular';
+}
+
+a[href^="http"]:not(:has(img)) {
+	background-image: url(assets/external-link.svg);
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding-right: 0.6em;
+}
+
+
+.navtext * {
+	all: initial;
+	font-family: 'pixter-granularregular';
+  }
+
+  .flashbang {
+	width: 32px;
+	height: 32px;
+	margin: 500px 0 0;
+	text-align: left;
+}
+.splashtext {
+	display: flex;
+	flex-direction: row;
+	max-width: 1100px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -2px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#onekocheck:checked ~ #oneko {
+	display: none;
+}
+
+#onekocheck {
+	display: none
+}
+#onekocheck + label {
+	content: url("/assets/oneko/oneko sit button.png");
+	width: 40px;
+	image-rendering: pixelated;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+#onekocheck:hover + label {
+	content: url("assets/oneko/oneko sit button hover.png");
+}
+#onekocheck:checked + label {
+	content: url("assets/oneko/oneko sleep button.png");
+}
+
+#onekocheck:checked:hover + label {
+	content: url("assets/oneko/oneko sleep button hover.png");
+}
+.navbar ul{
+	list-style-type: none;
+	background-color: #7300ff;
+	padding: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	width: fit-content;
+	border: 3px solid black;
+}
+.navbar a{
+	color: white;
+	text-decoration: none;
+	padding: 15px;
+	display: block;
+	text-align: center;
+}
+.navbar a:hover{
+	background-color: #a257ff;
+}
+.navbar li{
+	float: left;
+}
+.pride	{
+	-webkit-transform: scaleX(-1);
+  	transform: scaleX(-1);
+	margin-left: auto;
+	margin-top: -5em;
+	height: 100px;
+}
+.textgrid {
+  display: flex;  
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  flex-direction: row;
+
+}
