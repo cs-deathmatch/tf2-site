@@ -21,14 +21,14 @@
     <meta property="twitter:url" content="http://tf2.wii.gay/" />
     <meta property="twitter:title" content="Pink Pwny Club homepage" />
     <meta property="twitter:description" content="The homepage for the Pink Pwny Club TF2 server" />
-    <meta property="twitter:image" content="http://tf2.wii.gay/assets/ctf_2fort.jpg" />
+    <meta property="twitter:image" content="http://tf2.wii.gay/assets/mapimages/live/ctf_2fort.jpg" />
 
     <!-- Everything else(?) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://tf2.wii.gay/" />
     <meta property="og:title" content="Pink Pwny Club homepage" />
     <meta property="og:description" content="The homepage for the Pink Pwny Club TF2 server" />
-    <meta property="og:image" content="http://tf2.wii.gay/assets/ctf_2fort.jpg" />
+    <meta property="og:image" content="http://tf2.wii.gay/assets/mapimages/live/ctf_2fort.jpg" />
 
     
 
@@ -37,43 +37,813 @@
 .mainbox {
 	display: flex;
 	flex-direction: row;
-	max-width: 1100px;
 	width: 90%;
 	margin: auto;
 	justify-content: center;
 	flex-wrap: wrap;
 }
-.maintext {
-	margin-bottom: 5px;
-	font-size: 125%;
-	width: 800px;
+.title {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+img[src*="mapimages"] {
+	cursor: pointer;
+}
+summary{
+	cursor: pointer;
+}
+.toast {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	padding: 12px 24px;
+	border-radius: 4px;
+	font-size: 16px;
+	pointer-events: none;
+	animation: floatUp 2s ease-out forwards;
+	z-index: 1000;
+  font-family: 'TF2 Secondary';
+}
+@keyframes floatUp {
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-50px);
+	}
+}
+.mapbox p {
+    font-family: 'TF2 Secondary';
+    font-weight: normal;
+    font-style: normal;
+    color: white;
+    font-size: 22px;
+}
+details {
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+    font-family: 'TF2 Secondary';
+    font-weight: normal;
+    font-style: normal;
+    color: white;
+    font-size: 25px;
+    max-width: 966px;
+    margin: auto;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
+}
+.mapbox {
+    display: flex;
+    flex-direction: column;
+  border: 2px solid #ffffff;
+  border-radius: 0px;
+  padding: 0.5em 0.5em 0em;
+    color: white;
+    font-size: 15px;
+    max-width: 270px;
+    align-items: center;
+}
+.mapname
+{
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    	max-width: 966px;
 }
 
 </style>
 <body>
-        <h1>Pink Pwny Club!</h1>
-        <nav class="navbar">
+	<div class="title">
+		<h1>Maps</h1>
+	</div>
+    <nav class="navbar">
             <ul>
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/rules.html">Rules</a></li>
                 <li><a href="/info.html">Info</a></li>
-                <li><a href="/maps.html">Maps</a></li>
+                <li><p>Maps</p></li>
                 <li><a href="https://discord.gg/qmk5XjkP64">Contact</a></li>
             </ul>
         </nav>
-        <hr>
-	<div class="mainbox">
-		<p>Thanks for choosing to play on my server! If you enjoy, don't forget to favorite it and tell a friend!
-        <br><br>Here on Pink Pwny Club (pronounced Pony, like the song), we've got a vanilla casual experience, with just a handful of plugins to help the rounds flow better. Tired of the map? Rock the vote! Want to flame the enemy? No need to type faster than a league player, all talk is enabled.
-        <br><br>Currently we only have vanilla maps in rotation, but I'm looking into adding a handful of custom maps. To see what we have enabled, or to suggest a map to add, check the Maps tab.
-        <br><br>There's also a handful of chat commands available to fine-tune your experience, such as !listmaps, !votecrits, and !votescramble. Check the Info tab for more information!
-        <br><br>Detailed rules are available on the page above. But in short; don't be an asshole, and have fun.
-        <br><br>If you have any questions, want notified for events, or just wanna hang out, hop in the <a href="https://discord.gg/qmk5XjkP64">Discord!</a>
-        <br><br>(This server will NEVER feature any advertising)
-        </p>
-        <img class="pride" src="assets/trans flag low res.gif" alt="a waving gif of the transgender pride flag" title="if this flag offends you, i'll help you pack">
-    </div>
-	<hr>
+        	<div class="title">
+		<h2>Click on any map to copy it's nomination command, then paste it into your chat (ctrl + v)</h2>
+        </div><div class="title">
+        <h2>Want to suggest a map for the server? Click <a href="https://forms.gle/aNrmAR7wMqj5LaME9">here</a>or type !addmap in chat.</h2>
+        </div>
+	</div>
+  <div class="mapgrid">
+    <!--everything below here generated with mapgen.py-->
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_badlands.jpg" alt="arena_badlands"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Badlands</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_granary.jpg" alt="arena_granary"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Granary</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_lumberyard.jpg" alt="arena_lumberyard"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Lumberyard</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_nucleus.jpg" alt="arena_nucleus"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Nucleus</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_offblast_final.jpg" alt="arena_offblast_final"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Offblast_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_ravine.jpg" alt="arena_ravine"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Ravine</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_sawmill.jpg" alt="arena_sawmill"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Sawmill</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_watchtower.jpg" alt="arena_watchtower"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Watchtower</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/arena_well.jpg" alt="arena_well"> <div class="mapname"> <img title="arena" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/arena.png" alt="arena"> <p>Well</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_dustbowl.jpg" alt="cp_dustbowl"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Dustbowl</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_egypt_final.jpg" alt="cp_egypt_final"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Egypt_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_gorge.jpg" alt="cp_gorge"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Gorge</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_gravelpit.jpg" alt="cp_gravelpit"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Gravelpit</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_junction_final.jpg" alt="cp_junction_final"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Junction_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_mercenarypark.jpg" alt="cp_mercenarypark"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Mercenarypark</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_mossrock.jpg" alt="cp_mossrock"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Mossrock</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_mountainlab.jpg" alt="cp_mountainlab"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Mountainlab</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_snowplow.jpg" alt="cp_snowplow"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Snowplow</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_steel.jpg" alt="cp_steel"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Steel</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_sulfur.jpg" alt="cp_sulfur"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Sulfur</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_5gorge.jpg" alt="cp_5gorge"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>5gorge</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_badlands.jpg" alt="cp_badlands"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Badlands</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_coldfront.jpg" alt="cp_coldfront"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Coldfront</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_fastlane.jpg" alt="cp_fastlane"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Fastlane</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_foundry.jpg" alt="cp_foundry"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Foundry</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_freight_final1.jpg" alt="cp_freight_final1"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Freight_final1</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_granary.jpg" alt="cp_granary"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Granary</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_gullywash.jpg" alt="cp_gullywash"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Gullywash</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_powerhouse.jpg" alt="cp_powerhouse"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Powerhouse</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_well.jpg" alt="cp_well"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Well</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/cp_yukon_final.jpg" alt="cp_yukon_final"> <div class="mapname"> <img title="cp" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/cp.png" alt="cp"> <p>Yukon_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_2fort.jpg" alt="ctf_2fort"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>2fort</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_doublecross.jpg" alt="ctf_doublecross"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>Doublecross</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_landfall.jpg" alt="ctf_landfall"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>Landfall</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_pelican_peak.jpg" alt="ctf_pelican_peak"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>Pelican_peak</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_sawmill.jpg" alt="ctf_sawmill"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>Sawmill</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_turbine.jpg" alt="ctf_turbine"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>Turbine</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/ctf_well.jpg" alt="ctf_well"> <div class="mapname"> <img title="ctf" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf.png" alt="ctf"> <p>Well</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_badlands.jpg" alt="koth_badlands"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Badlands</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_harvest_final.jpg" alt="koth_harvest_final"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Harvest_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_highpass.jpg" alt="koth_highpass"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Highpass</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_king.jpg" alt="koth_king"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>King</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_lakeside_final.jpg" alt="koth_lakeside_final"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Lakeside_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_nucleus.jpg" alt="koth_nucleus"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Nucleus</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_sawmill.jpg" alt="koth_sawmill"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Sawmill</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_suijin.jpg" alt="koth_suijin"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Suijin</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/koth_viaduct.jpg" alt="koth_viaduct"> <div class="mapname"> <img title="koth" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth.png" alt="koth"> <p>Viaduct</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_badwater.jpg" alt="pl_badwater"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Badwater</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_barnblitz.jpg" alt="pl_barnblitz"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Barnblitz</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_cashworks.jpg" alt="pl_cashworks"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Cashworks</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_embargo.jpg" alt="pl_embargo"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Embargo</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_frontier_final.jpg" alt="pl_frontier_final"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Frontier_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_goldrush.jpg" alt="pl_goldrush"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Goldrush</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_hoodoo_final.jpg" alt="pl_hoodoo_final"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Hoodoo_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_thundermountain.jpg" alt="pl_thundermountain"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Thundermountain</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/pl_upward.jpg" alt="pl_upward"> <div class="mapname"> <img title="pl" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl.png" alt="pl"> <p>Upward</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/plr_hightower.jpg" alt="plr_hightower"> <div class="mapname"> <img title="plr" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/plr.png" alt="plr"> <p>Hightower</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/plr_nightfall_final.jpg" alt="plr_nightfall_final"> <div class="mapname"> <img title="plr" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/plr.png" alt="plr"> <p>Nightfall_final</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/plr_pipeline.jpg" alt="plr_pipeline"> <div class="mapname"> <img title="plr" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/plr.png" alt="plr"> <p>Pipeline</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/sd_doomsday.jpg" alt="sd_doomsday"> <div class="mapname"> <img title="sd" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/sd.png" alt="sd"> <p>Doomsday</p></div></div>
+<div class="mapbox"> <img width="270" src="/assets/mapimages/live/tc_hydro.jpg" alt="tc_hydro"> <div class="mapname"> <img title="tc" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/tc.png" alt="tc"> <p>Hydro</p></div></div>
+  </div class="mapgrid">
+  </div>
+  <!-- lots of tf2c maps here, and lots of bad ones i probably should prune out. will be doing a pass here before adding customs to the server
+	<div class="title">
+		<h1>Custom Maps</h1>
+	</div>
+  <div class="mapgrid">
+                            <div class="interior">
+                                    <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/Bomb_Survival.jpg" alt="Bomb_Survival">
+        <div class="mapname">
+          <img title="Custom" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dm icon.png" alt="Custom">
+          <p>Bomb Survival</p>
+          <a target="_blank" href="https://tf2maps.net/downloads/red-bounty-attack-defense.12553/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em; margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/cp_redbounty_rc2.jpg" alt="cp_redbounty_rc2">
+        <div class="mapname">
+          <img title="Attack/Defense" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/attack defense icon.png" alt="Attack/Defense">
+          <p>Redbounty</p>
+          <a target="_blank" href="https://tf2maps.net/downloads/red-bounty-attack-defense.12553/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em; margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/adf_coaltown.jpg" alt="adf_coaltown">
+        <div class="mapname">
+          <img title="Attack/Defense" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/attack defense icon.png" alt="Attack/Defense">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Coaltown</p>
+          <a target="_blank" href="https://gamebanana.com/mods/374227"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+          </div>
+                                <div class="interior">
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/ctf_4bine_v2.jpg" alt="ctf_4bine_v2">
+        <div class="mapname">
+          
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>4bine</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56188"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
 
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/ctf_4fort_Artpass_v2_fix_a.jpg" alt="ctf_4fort_Artpass_v2_fix_a">
+        <div class="mapname">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>4fort</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56193"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4ctf_4tokyo_r4a.jpg" alt="4ctf_4tokyo_r4a">
+        <div class="mapname">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>4Tokyo</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56189"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                     
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4ctf_blockfortress.jpg" alt="4ctf_blockfortress">
+        <div class="mapname">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Block Fortress</p>
+          <a target="_blank" href="https://gamebanana.com/mods/650230"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/3ctf_thyristor_rc2.jpg" alt="3ctf_thyristor_rc2">
+        <div class="mapname">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Thyristor</p>
+          <a target="_blank" href="https://gamebanana.com/mods/644990"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                  <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/3koth_trefoil_rc2.jpg" alt="3koth_trefoil_rc2">
+        <div class="mapname">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Trefoil</p>
+          <a target="_blank" href="https://gamebanana.com/mods/618084"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                     
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4ctf_quadcross_rc2.jpg" alt="4ctf_quadcross_rc2">
+        <div class="mapname">
+          <img title="Capture The Flag" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/ctf icon.png" alt="Capture The Flag">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Quadcross</p>
+          <a target="_blank" href="https://gamebanana.com/mods/654744"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/cp_2train_tf2c.jpg" alt="cp_2train_tf2c">
+        <div class="mapname">
+          <img title="Control Points" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/control points icon.png" alt="Control Points">
+          <p>2train</p>
+          <a target="_blank" href="https://gamebanana.com/mods/632699"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/cp_anothercastle_a5.jpg" alt="cp_anothercastle_a5">
+        <div class="mapname">
+          <img title="Control Points" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/control points icon.png" alt="Control Points">
+          <p>Another Castle</p>
+          <a target="_blank" href="https://gamebanana.com/mods/654192"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                     
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/cp_dust2_2x2.jpg" alt="cp_dust2_2x2">
+        <div class="mapname">
+          <img title="Control Points" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/control points icon.png" alt="Control Points">
+          <p>Dust2 2x2</p>
+          <a target="_blank" href="https://gamebanana.com/mods/384485"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/cp_orange_x3.jpg" alt="cp_orange_x3">
+        <div class="mapname">
+          <img title="Control Points" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/control points icon.png" alt="Control Points">
+          <p>Orange</p>
+          <a target="_blank" href="https://gamebanana.com/mods/69885"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/cp_fourange.jpg" alt="cp_fourange">
+        <div class="mapname">
+          
+          <img title="Control Points" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/control points icon.png" alt="Control Points">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Fourange</p>
+          <a target="_blank" href="https://gamebanana.com/mods/344866"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+             
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/wii_play_tanks.jpg" alt="wii_play_tanks">
+        <div class="mapname">
+          
+          <img title="Control Points" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/control points icon.png" alt="Control Points">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Wii Play Tanks</p>
+          <a target="_blank" href="https://gamebanana.com/mods/656545"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+
+   
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_3dland_bunker_v2.jpg" alt="dom_3dland_bunker">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <p>3D Land Bunker</p>
+          <a target="_blank" href="https://gamebanana.com/mods/643081"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                        <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_5Gorge_v3.jpg" alt="dom_5Gorge_v3">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>5Gorge</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56216"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+             
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_badwater.jpg" alt="dom_badwater">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Badwater</p>
+          <a target="_blank" href="https://gamebanana.com/mods/309956"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+                                                          <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4dom_badwater_a1.jpg " alt="dom_badwater">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Badwater (but this one is different)</p>
+          <a target="_blank" href="https://gamebanana.com/mods/654602"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                                                    <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_base_b1.jpg" alt="dom_base_b1">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Base</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56220"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+           <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_carts_v3.jpg" alt="dom_carts_v3">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <p>Carts</p>
+          <a target="_blank" href="https://gamebanana.com/mods/581111"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                         <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_cliffhanger_b11_tf2c.jpg" alt="dom_cliffhanger_b11_tf2c">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <p>Cliffhanger</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56223"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+              <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4dom_cragg_v2.jpg" alt="4dom_cragg">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Cragg</p>
+          <a target="_blank" href="https://gamebanana.com/mods/650805"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+                <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_diametric_a2.jpg" alt="dom_diametric_a2">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Diametric</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56215"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+  
+                <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_dustbowl_4team.jpg" alt="dom_dustbowl_4team">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Dustbowl</p>
+          <a target="_blank" href="https://gamebanana.com/mods/395454"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+        <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_flood2_redux_rc2.jpg" alt="dom_flood2_redux_rc2">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <p>Flood2</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56227"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+        <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/3dom_gravelpit_rc2.jpg" alt="3dom_gravelpit_rc2">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Gravelpit</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56227"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+              <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4dom_hightower_rc2.jpg" alt="4dom_hightower_rc2">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Hightower</p>
+          <a target="_blank" href="https://gamebanana.com/mods/654750"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                    <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4dom_powerhouse_rc1.jpg" alt="4dom_powerhouse_rc1">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Powerhouse</p>
+          <a target="_blank" href="https://tf2maps.net/downloads/4dom_powerhouse_rc1.20378/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+        <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_primoumic_a5.jpg" alt="dom_primoumic_a5">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <p>Primoumic</p>
+          <a target="_blank" href="https://gamebanana.com/mods/650380"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_spire_fix_a.jpg" alt="dom_spire_fix_a">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Spire</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56234"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+         <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_standin_tf2c_rc3.jpg" alt="dom_standin_tf2c_rc3">
+        <div class="mapname">
+
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <p>Standin</p>
+          <a target="_blank" href="https://gamebanana.com/mods/651871"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/dom_steel.jpg" alt="dom_steel">
+        <div class="mapname">
+          <img title="Domination" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/dom logo.png" alt="Domination">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Steel</p>
+          <a target="_blank" href="https://gamebanana.com/mods/288305"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/fr_frank_st1.jpg" alt="fr_frank_st1">
+        <div class="mapname">
+          <img title="Fr" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/football emoji.png" alt="Fr">
+          <p>Frank</p>
+          <p style="margin-left: 20px;" title="From shounic's 100 player server">!</p>
+        </div>
+      </div>
+
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_3dland_ghosthouse_v2.jpg" alt="koth_3dland_ghosthouse">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <p>3D Land Ghost House</p>
+          <a target="_blank" href="https://gamebanana.com/mods/628586"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+     </div>
+      <div class="interior">
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4koth_3dland_lifted_v2.jpg" alt="4koth_3dland_lifted">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>3D Land Lifted</p>
+          <a target="_blank" href="https://gamebanana.com/mods/637117"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_4Harvest.jpg" alt="koth_4Harvest">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>4Harvest</p>
+          <a target="_blank" href="https://gamebanana.com/mods/393953"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+                  <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_bananalessbay_rc1.jpg" alt="koth_bananalessbay_rc1">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <p>Bananaless Bay</p>
+          <a target="_blank" href="https://tf2maps.net/downloads/koth_bananalessbay_rc1.20363/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+                        <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_brokenhills_b3b.jpg" alt="koth_brokenhills_b3b">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <p>Broken Hills</p>
+          <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3320548015"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_clo4k.jpg" alt="koth_clo4k">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Clo4k</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56241"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                 <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_depot_final1.jpg" alt="koth_depot_final1">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <p>Home Depot</p>
+          <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2812400076"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_disneyworld_b1.jpg" alt="koth_disneyworld_b1">
+        <div class="mapname">
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <p>Disney World</p>
+          <a target="_blank" href="https://gamebanana.com/mods/72878"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_fourmill_v1.jpg" alt="koth_fourmill_v1">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Fourmill</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56237"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                 <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4koth_hightower_rc3.jpg" alt="4koth_hightower_rc3">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Hightower</p>
+          <a target="_blank" href="https://gamebanana.com/mods/654749"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+     </div>
+      <div class="interior">
+        <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_megaman6_rc1.jpg" alt="koth_megaman6_rc1">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <p>Megaman</p>
+          <a target="_blank" href="https://gamebanana.com/mods/72978"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/koth_4process2.jpg" alt="koth_4process2">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Process</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56236"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4koth_pipeline_rc1.jpg" alt="4koth_pipeline_rc1">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Pipeline</p>
+          <a target="_blank" href="https://tf2maps.net/downloads/4koth_pipeline_rc1.20365/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/4koth_target_v2.jpg" alt="koth_target_v2">
+        <div class="mapname">
+
+          <img title="King Of The Hill" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/koth icon.png" alt="King Of The Hill">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>Target</p>
+          <a target="_blank" href="https://gamebanana.com/mods/652697"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+          <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/pl_candyland_rc1.jpg" alt="pl_candyland_rc1">
+        <div class="mapname">
+          <img title="Payload" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl icon.png" alt="Payload">
+          <p>Candyland</p>
+          <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3597952906"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+         <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/pl_dbz_gexver_b2a.jpg" alt="pl_dbz_gexver_b2a">
+        <div class="mapname">
+          <img title="Payload" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl icon.png" alt="Payload">
+          <p>DBZ (Gex's Ver.)</p>
+          <a target="_blank" href="https://tf2maps.net/downloads/pl_dbz_gexver.17131/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+                <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/pl_dust2_2x2.jpg" alt="pl_dust2_2x2">
+        <div class="mapname">
+          <img title="Payload" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl icon.png" alt="Payload">
+          <p>Dust2 2x2</p>
+          <a target="_blank" href="https://gamebanana.com/mods/381053"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+          <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/pl_downfall_b11.jpg" alt="pl_downfall_b11">
+        <div class="mapname">
+          <img title="Payload" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl icon.png" alt="Payload">
+          <p>Downfall</p>
+          <a target="_blank" href="https://tf2maps.net/threads/downfall.48400/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/pl_offshore_rc1.jpg" alt="pl_offshore_rc1">
+        <div class="mapname">
+
+          <img title="Payload" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl icon.png" alt="Payload">
+          <p>Offshore</p>
+          <p style="margin-left: 20px;" title="I honestly have no clue where this map was ever up for download, i only got it cus i connected to another server that had it. If you know, dm me (@N4pstr) on discord please">?</p>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+          <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/pl_rainbowride_b7e.jpg" alt="pl_rainbowride_b7e">
+        <div class="mapname">
+          <img title="Payload" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/pl icon.png" alt="Payload">
+          <p>Rainbow Ride</p>
+          <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=454588202"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/plr_nucleus_ctc_v8.jpg" alt="plr_nucleus_ctc_v8">
+        <div class="mapname">
+          <img title="Payload Race" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/plr icon.png" alt="Payload Race">
+          <p>Nucleus</p>
+          <a target="_blank" href="https://gamebanana.com/mods/653280"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+                                                                <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/plr_4tower_a2.jpg" alt="plr_4tower_a2">
+        <div class="mapname">
+          <img title="Payload Race" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/plr icon.png" alt="Payload Race">
+          <img title="4 Team" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/4 team logo.png" alt="4 Team">
+          <p>4Tower</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56184"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+                                                          <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/plr_highertower_extended.jpg" alt="plr_highertower_extended">
+        <div class="mapname">
+
+          <img title="Payload Race" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/plr icon.png" alt="Payload Race">
+          <p>Higher Tower</p>
+          <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1428907188"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/sd_toucan_final2.jpg" alt="sd_toucan_final2">
+        <div class="mapname">
+
+          <img title="Special Delivery" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/sd icon.png" alt="Special Delivery">
+          <p>Toucan</p>
+          <a target="_blank" href="https://tf2maps.net/threads/toucan.49330/"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+
+                <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/vip_dustbowl_a2.jpg" alt="vip_dustbowl_a2">
+        <div class="mapname">
+          <img title="VIP Race" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/vip icon.png" alt="VIP">
+          <p>Dustbowl</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56200"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+      </div>
+           </div>
+      <div class="interior">
+            <div class="mapbox">
+        <img width="270" src="/assets/mapimages/custom/vip_upward_v4.jpg" alt="vip_upward_v4">
+        <div class="mapname">
+
+          <img title="VIP" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;" src="/assets/vip icon.png" alt="VIP">
+          <p>Upward</p>
+          <a target="_blank" href="https://gamebanana.com/mods/56211"><img title="Download here" width="30px" height="30px" style="margin-top: 1.4em;margin-right: 0.5em;margin-left: 5px;" src="/assets/gamebanana.png" alt="Gamebanana"></a>
+        </div>
+    </div>-->
+      
+    </div>
+</div class="mapgrid">
+  <script>
+    document.addEventListener('click', function(event) {
+      const target = event.target;
+      // Check if the clicked element is an image with mapimages in its src
+      if (target.tagName === 'IMG' && target.src.includes('mapimages')) {
+        // Extract the filename from the src
+        const filename = target.src.split('/').pop();
+        // Remove the file extension
+        const mapName = filename.split('.').slice(0, -1).join('.');
+        // Create the nomination command
+        const command = '!nominate ' + mapName;
+        // Copy to clipboard
+        navigator.clipboard.writeText(command).then(function() {
+          console.log('Copied to clipboard: ' + command);
+          // Show toast notification
+          const toast = document.createElement('div');
+          toast.className = 'toast';
+          toast.textContent = 'Copied!';
+          document.body.appendChild(toast);
+          // Remove toast after animation completes
+          setTimeout(function() {
+            toast.remove();
+          }, 1000);
+        }).catch(function(err) {
+          console.error('Failed to copy to clipboard:', err);
+        });
+      }
+    });
+  </script>
 	 </body>
 </html>
